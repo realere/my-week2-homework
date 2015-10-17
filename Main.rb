@@ -21,16 +21,15 @@ hotel.add_person(Person.new('Pebbles'))
 hotel.add_person(Person.new('Bambam'))
 hotel.add_person(Person.new('Dino'))
     
-binding.pry;''
 
 response = menu
 while response != 0
 
   case response
     when 1
-      add_room(hotel)
+      create_room(hotel)
     when 2
-      add_person(hotel)
+      create_person(hotel)
     when 3
       list_rooms(hotel)
     when 4
