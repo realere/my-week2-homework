@@ -1,16 +1,21 @@
 class Hotel
+  attr_reader :name, :rooms, :person
 
-  attr_reader :name, :rooms, :people
   def initialize(name)
     @name = name
     @rooms = {}
-    @people = {}
-    
+    @person = {}
   end
+  
 
-   def add_person(person, chain )
-    @people[person.object_id.to_s] = guest 
-
-      
+   def add_person(person)
+    @person[person.object_id.to_s] = person 
+ 
     end 
+
+   def add_room(room)
+     @rooms[room.object_id.to_s] = room
+  
+   end
+
 end
