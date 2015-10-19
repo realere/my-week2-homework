@@ -19,11 +19,25 @@ def list_rooms(hotel)
   puts hotel.list_rooms
   
 end
-def list_person
-  puts hotel.list_person
+
+def list_people(hotel)
+  puts hotel.list_people
   
 end
+def checkin_people(hotel) #lend_book
+  puts hotel.list_rooms
+  puts
+  print "Which room would you like to stay in today(by name): "
+  room_name = gets.chomp
 
+  puts
+  puts hotel.list_people
+  puts
+  print "Which person is going to by staying here (by name): "
+  person_name = gets.chomp
+
+  puts hotel.check_in(person_name, room_name)
+end
 def create_person(hotel)
   print "Name: "
   name = gets.chomp
@@ -34,8 +48,8 @@ def create_room(hotel)
  print "Name: "
  name = gets.chomp
 
- print "Room name: "
- room_name = gets.chomp
+ print "Room Type: "
+ room_type = gets.chomp
 
  hotel.add_room(Room.new(room_type: name, rooms_available: rooms_available, price: price))  
 end

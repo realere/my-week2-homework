@@ -22,26 +22,25 @@ hotel.add_person(Person.new('Bambam'))
 hotel.add_person(Person.new('Dino'))
     
 
+
 response = menu
 while response != 0
 
   case response
     when 1
-      create_room(hotel)
+      add_room(hotel)
     when 2
-      create_person(hotel)
+      add_person(hotel)
     when 3
       list_rooms(hotel)
     when 4
       list_people(hotel)
     when 5
-      check_in(hotel)
+        check_in(hotel)
     when 6
       check_out(hotel)
     when 7
-      list_rented_rooms(hotel)
-    when 8
-      price_of_rooms
+      list_rented_room(hotel)
     else
       puts "invalid option"
   end
@@ -53,4 +52,4 @@ while response != 0
 end
 
 
-#binding.pry;''
+binding.pry;''

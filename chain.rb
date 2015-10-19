@@ -1,10 +1,10 @@
-class Hotel
-  attr_reader :name, :rooms, :person
+class Chain
+  attr_reader :name, :hotel, :room
 
   def initialize(name)
     @name = name
     @hotel = {}
-    @person = {}
+    @room = {}
   end
   
 

@@ -1,15 +1,15 @@
 class Hotel
-  attr_reader :name, :rooms, :person
+  attr_reader :name, :rooms, :people
 
   def initialize(name)
     @name = name
     @rooms = {}
-    @person = {}
+    @people = {}
   end
   
 
   def add_person(person)
-   @person[person.object_id.to_s] = person 
+   @people[person.object_id.to_s] = person 
  
   end 
 
@@ -38,6 +38,30 @@ def list_rooms
     else
       rooms.map do |key, room|
         room.be_my_guest
+      end.join("\n")
+    end
+  end
+
+  def check_in(person_name, room_name)
+    if person = people[person_name]
+      if room = @room.delete(room_name)
+        person.occupy(room)
+        #occupy = borrow
+        return nil
+      else
+        "Invalid room please try again"
+      end
+    else
+      "Invalid person name, please try again"
+    end
+  end
+
+  def list_people
+    if people.empty?
+      "There is nobody in Hotel Transylvania"
+    else
+      people.map do |key, person|
+        person.be_my_guest
       end.join("\n")
     end
   end

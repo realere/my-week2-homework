@@ -10,7 +10,7 @@ class Room
   end
 
 
-  def be_my_guest
-    "Room ID #{object_id} is called '#{room_type}', #{rooms_available} rooms and it cost #{price}"
+  def be_my_guest(hotel)
+    "Room ID #{object_id} is called #{room_type}, #{rooms_available} rooms and it cost #{price}"
   end
 end
